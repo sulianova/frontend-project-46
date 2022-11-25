@@ -8,6 +8,8 @@ program
   .version('1.0.0');
 
 program
-  .description('Compares two configuration files and shows a difference.');
+  .description('Compares two configuration files and shows a difference.')
+  .arguments('<ffilepath1> <filepath2>')
+  .option('-f, --format [type]', 'Output format', 'stylish');
 
 program.parse();
