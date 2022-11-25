@@ -1,6 +1,9 @@
 install:
 	npm install
 
+start:
+	sudo npm link
+
 test:
 	npm test
 
