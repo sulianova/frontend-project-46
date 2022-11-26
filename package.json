@@ -7,7 +7,7 @@
     "gendiff": "./bin/gendiff.js"
   },
   "description": "sulianova hexlet project 2",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "babel-node": "babel-node",
     "eslint": "eslint",
@@ -31,9 +31,12 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^27.1.6",
-    "jest": "^29.3.1"
+    "jest": "^29.3.1",
+    "prettier": "^2.8.0"
   },
   "dependencies": {
-    "commander": "^9.4.1"
+    "commander": "^9.4.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
   }
 }
