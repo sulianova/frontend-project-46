@@ -5,7 +5,7 @@ import genDiff from '../src/index.js';
 const fileExt = ['.json'];
 const __filename = '__fixtures__/result_stylish.txt';
 const __dirname = dirname(__filename);
-console.log("Current directory:", __dirname);
+
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
 const resultStylish = fs.readFileSync(getFixturePath('result_stylish.txt'), 'utf-8');
