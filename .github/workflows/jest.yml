@@ -1,0 +1,41 @@
+name: 'project test'
+on:
+  - push
+  - pull_request
+  
+env:
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+      
+      - name: Install
+        run: make install
+        env:
+          CI: true
+
+      - name: Run linter
+        run: make lint
+
+      - name: Run tests
+        run: make test
+      
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
