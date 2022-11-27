@@ -15,6 +15,6 @@ publish:
 
 test:
 	# NODE_OPTIONS=--experimental-vm-modules npx jest
-	npm test
+	npm test -- --watch
 
 .PHONY: test

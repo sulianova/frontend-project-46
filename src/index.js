@@ -5,15 +5,15 @@ import parse from './parsers.js';
 import compareData from './compareData.js';
 import format from './renders/index.js';
 
-const getAbsolutPath = (fileName) => path.resolve(process.cwd(), fileName);
-const readFile = (fileName) => fs.readFileSync(getAbsolutPath(fileName), 'utf-8');
-const getFormat = (fileName) => _.last(fileName.split('.'));
+const getAbsolutPath = (filename) => path.resolve(process.cwd(), filename);
+const readFile = (filename) => fs.readFileSync(getAbsolutPath(filename), 'utf-8');
+const getFormat = (filename) => _.last(filename.split('.'));
 
-const genDiff = (fileName1, fileName2, formatType = 'stylish') => {
-  const data1 = readFile(fileName1);
-  const data2 = readFile(fileName2);
-  const parsedFile1 = parse(data1, getFormat(fileName1));
-  const parsedFile2 = parse(data2, getFormat(fileName2));
+const genDiff = (filename1, filename2, formatType = 'stylish') => {
+  const data1 = readFile(filename1);
+  const data2 = readFile(filename2);
+  const parsedFile1 = parse(data1, getFormat(filename1));
+  const parsedFile2 = parse(data2, getFormat(filename2));
   const data = compareData(parsedFile1, parsedFile2);
 
   return format(data, formatType);
