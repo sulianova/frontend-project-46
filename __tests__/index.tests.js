@@ -2,7 +2,7 @@ import fs from 'fs';
 import path, { dirname } from 'path';
 import genDiff from '../src/index.js';
 
-const fileExt = ['.json'];
+const fileExt = ['.json', '.yml'];
 const __filename = '__fixtures__/result_stylish.txt';
 const __dirname = dirname(__filename);
 
