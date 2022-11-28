@@ -26,4 +26,4 @@ const getPlainFormat = (value, parent = '') => {
   }
 };
 
-export default (data) => `${data.map((element) => getPlainFormat(element)).join('\n')}`;
+export default (data) => `${data.map((element) => getPlainFormat(element)).join('\n')}`.replace(/\n+$/m, '');
