@@ -18,6 +18,7 @@
 ```
 git clone git@github.com:sulianova/frontend-project-46.git
 cd frontend-project-46
+make install
 npm link
 ```
 ## Usage
