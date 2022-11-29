@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	sudo npm link
+	npm link
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
